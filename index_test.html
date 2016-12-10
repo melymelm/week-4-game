@@ -109,16 +109,16 @@ Each crystal should have a random hidden value between 1 - 12. -->
 	$("#button1").on("click", function() {
 		//add button's value to score
 		//check if score is bigger, smaller, equal to target --> new function "check score"
-			var x = this.value;
-			crys0 = parseInt(x);
+			crys0 = this.value;
+			var x = parseInt(crys0);
 			console.log("crys0: " + crys0);		
 
 			checkScore(x);	
 	}); // *** Button event handler ends here ***
 
 	$("#button2").on("click", function() {
-			var x = this.value;
-			crys1 = parseInt(x);
+			crys1 = this.value;
+			var x = parseInt(crys1);
 			console.log("crys1: " + crys1);
 
 
@@ -126,8 +126,8 @@ Each crystal should have a random hidden value between 1 - 12. -->
 	});
 
 	$("#button3").on("click", function() {
-			var x = this.value;
-			crys2 = parseInt(x);
+			crys2 = this.value;
+			var x = parseInt(crys2);
 			console.log("crys2: " + crys2);
 
 
@@ -135,8 +135,8 @@ Each crystal should have a random hidden value between 1 - 12. -->
 	});
 
 	$("#button4").on("click", function() {
-			var x = this.value;
-			crys3 = parseInt(x);
+			crys3 = this.value;
+			var x = parseInt(crys3);
 			console.log("crys3: " + crys3);
 
 
