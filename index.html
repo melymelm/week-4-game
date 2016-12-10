@@ -75,9 +75,7 @@ Each crystal should have a random hidden value between 1 - 12. -->
 	//setting vars
 
 	var ranNum=0;
-	var playScore=0;
 	var respScore=0;
-	var respScore1=0;
 	var winNum=0;
 	var lossNum=0;
 	var crys0=0;
@@ -109,48 +107,55 @@ Each crystal should have a random hidden value between 1 - 12. -->
 	$("#button1").on("click", function() {
 		//add button's value to score
 		//check if score is bigger, smaller, equal to target --> new function "check score"
-			var x = this.value;
-			crys0 = parseInt(x);
+			crys0 = this.value;
+			// var x = parseInt(crys0);
 			console.log("crys0: " + crys0);		
 
-			checkScore(x);	
+			checkScore(crys0);	
 	}); // *** Button event handler ends here ***
 
 	$("#button2").on("click", function() {
-			var x = this.value;
-			crys1 = parseInt(x);
+			crys1 = this.value;
+			// var x = parseInt(crys1);
 			console.log("crys1: " + crys1);
 
 
-			checkScore(x);	
+			checkScore(crys1);	
 	});
 
 	$("#button3").on("click", function() {
-			var x = this.value;
-			crys2 = parseInt(x);
+			crys2 = this.value;
+			// var x = parseInt(crys2);
 			console.log("crys2: " + crys2);
 
 
-			checkScore(x);	
+			checkScore(crys2);	
 	});
 
 	$("#button4").on("click", function() {
-			var x = this.value;
-			crys3 = parseInt(x);
+			crys3 = this.value;
+			// var x = parseInt(crys3);
 			console.log("crys3: " + crys3);
 
 
-			checkScore(x);	
-	});		
+			checkScore(crys3);	
+	});	
+
+
+
+
 	
 // *** This function should run every time the player clicks a button
 function checkScore(crystalValue) {
 
+	function respScore(crystalValue) {
+		respScore = respScore + parseInt(crystalValue);
+			console.log("resp score: " + respScore);
+			$("#playerScore").html(respScore);
+		}
+
 	//when player hits on crystal, update their score  *** This should run when a user clicks, but the score should only get updated with the current crystal's score, so I commented it out ***	
 
-		respScore = respScore + crystalValue;
-			console.log("resp score: " + respScore);
-		// 	$("#playerScore").html(respScore);
 
 		if (respScore>ranNum) {
 			gameOver=true;
@@ -164,7 +169,7 @@ function checkScore(crystalValue) {
 			keepPlay=true;
 		}
 
-		// if player wins or loses, reset game
+
 
 
 }; // *** checkScore function ends here ***
@@ -172,6 +177,7 @@ function checkScore(crystalValue) {
   // This runs once when the document loads
 
 	newGame();
+	
 	checkScore();
 
 });
